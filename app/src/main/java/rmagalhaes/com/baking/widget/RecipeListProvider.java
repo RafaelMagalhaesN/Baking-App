@@ -1,13 +1,9 @@
 package rmagalhaes.com.baking.widget;
 
-import android.app.LauncherActivity;
-import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Binder;
-import android.os.Bundle;
-import android.util.Log;
 import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
 
@@ -16,11 +12,6 @@ import java.util.ArrayList;
 import rmagalhaes.com.baking.R;
 import rmagalhaes.com.baking.data.RecipeActions;
 import rmagalhaes.com.baking.models.Recipe;
-import rmagalhaes.com.baking.ui.DetailActivity;
-import rmagalhaes.com.baking.ui.MainActivity;
-import rmagalhaes.com.baking.widget.service.RecipeWidgetService;
-
-import static rmagalhaes.com.baking.utils.Contants.INTENT_RECIPE_ID;
 
 /**
  * Created by Rafael Magalhães on 05/03/18.
@@ -29,12 +20,11 @@ import static rmagalhaes.com.baking.utils.Contants.INTENT_RECIPE_ID;
 public class RecipeListProvider implements RemoteViewsService.RemoteViewsFactory {
 
     private ArrayList<Recipe> mRecipes = new ArrayList<>();
-    private Context mContext;
-    private int appWidgetId;
+    private final Context mContext;
 
     public RecipeListProvider(Context mContext, Intent intent, ArrayList<Recipe> recipes) {
         this.mContext = mContext;
-        this.appWidgetId = intent.getIntExtra(AppWidgetManager.EXTRA_APPWIDGET_ID,
+        int appWidgetId = intent.getIntExtra(AppWidgetManager.EXTRA_APPWIDGET_ID,
                 AppWidgetManager.INVALID_APPWIDGET_ID);
         this.mRecipes = recipes;
     }

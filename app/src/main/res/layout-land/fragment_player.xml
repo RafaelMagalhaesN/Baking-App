@@ -28,6 +28,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/description"
-            android:text="NEXT STEP"/>
+            android:text="@string/next_step"/>
 
 </RelativeLayout>

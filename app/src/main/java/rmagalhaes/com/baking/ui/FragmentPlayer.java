@@ -33,7 +33,6 @@ import rmagalhaes.com.baking.models.RecipeSteps;
 
 import static rmagalhaes.com.baking.utils.Contants.SAVED_INSTANCE_RECIPE_PLAYER_STATE;
 import static rmagalhaes.com.baking.utils.Contants.SAVED_INSTANCE_RECIPE_STEPS_POSITION_STATE;
-import static rmagalhaes.com.baking.utils.Contants.SAVED_INSTANCE_RECIPE_STEPS_STATE;
 
 /**
  * Created by Rafael Magalhães on 03/03/18.
@@ -66,7 +65,7 @@ public class FragmentPlayer extends Fragment {
         Log.e("CLICK", "IUPDATE ");
     }
 
-    public Uri formatUri(String videoUrl) {
+    private Uri formatUri(String videoUrl) {
         String patternString = ".mp4";
         Pattern pattern = Pattern.compile(patternString);
         Matcher matcher = pattern.matcher(videoUrl);
@@ -86,9 +85,9 @@ public class FragmentPlayer extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         mContext = view.getContext();
-        mPlayerView = (SimpleExoPlayerView) view.findViewById(R.id.player);
-        mDescription = (TextView) view.findViewById(R.id.description);
-        nextButton = (Button) view.findViewById(R.id.next_step);
+        mPlayerView = view.findViewById(R.id.player);
+        mDescription = view.findViewById(R.id.description);
+        nextButton = view.findViewById(R.id.next_step);
 
         if (savedInstanceState != null && savedInstanceState.containsKey(SAVED_INSTANCE_RECIPE_STEPS_POSITION_STATE)) {
             position = savedInstanceState.getInt(SAVED_INSTANCE_RECIPE_STEPS_POSITION_STATE);
@@ -136,7 +135,7 @@ public class FragmentPlayer extends Fragment {
         outState.putInt(SAVED_INSTANCE_RECIPE_STEPS_POSITION_STATE, position);
     }
 
-    public void setViewItems() {
+    private void setViewItems() {
         if (mExoPlayer != null) mExoPlayer.release();
 
         mDescription.setText(mRecipeSteps.get(position).getDescription());
@@ -145,12 +144,13 @@ public class FragmentPlayer extends Fragment {
         mPlayerView.setPlayer(mExoPlayer);
         if (mExoPlayer != null && mVideoUrl != null && mContext != null) {
             String userAgent = Util.getUserAgent(mContext, "Culinary");
-            MediaSource mediaSource = new ExtractorMediaSource(mVideoUrl, new DefaultDataSourceFactory(
+            @SuppressWarnings("deprecation") MediaSource mediaSource = new ExtractorMediaSource(mVideoUrl, new DefaultDataSourceFactory(
                     mContext, userAgent), new DefaultExtractorsFactory(), null, null);
             mExoPlayer.prepare(mediaSource);
             mExoPlayer.seekTo(mDurationBuffer);
             mExoPlayer.setPlayWhenReady(true);
         } else {
+            assert mContext != null;
             Bitmap icon = BitmapFactory.decodeResource(mContext.getResources(),
                     R.drawable.video_placeholder);
             mPlayerView.setDefaultArtwork(icon);

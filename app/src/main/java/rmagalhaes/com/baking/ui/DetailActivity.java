@@ -4,11 +4,9 @@ import android.content.Intent;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import rmagalhaes.com.baking.R;
@@ -27,7 +25,6 @@ public class DetailActivity extends AppCompatActivity implements StepsAdapter.St
 
     private Recipe mRecipe;
     private FragmentSteps mDescriptionFragment;
-    private FragmentIngredients mIngredientsFragment;
     private FragmentPlayer mPlayerFragment;
     private FrameLayout mContent;
     private FrameLayout mIngredientsContent;
@@ -41,8 +38,8 @@ public class DetailActivity extends AppCompatActivity implements StepsAdapter.St
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-        mIngredientsContent = (FrameLayout) findViewById(R.id.ingredients);
-        mContent = (FrameLayout) findViewById(R.id.content);
+        mIngredientsContent = findViewById(R.id.ingredients);
+        mContent = findViewById(R.id.content);
 
 
         if (savedInstanceState == null) {
@@ -51,7 +48,7 @@ public class DetailActivity extends AppCompatActivity implements StepsAdapter.St
                 mRecipe = intent.getParcelableExtra(INTENT_RECIPE);
                 if (mRecipe != null) {
                     String ingredientsStep = "Ingredients";
-                    RecipeSteps introductionStep = new RecipeSteps(-1, ingredientsStep, ingredientsStep, "", "", true);
+                    RecipeSteps introductionStep = new RecipeSteps(-1, ingredientsStep, ingredientsStep);
                     mRecipe.getSteps().add(0, introductionStep);
                 }
             }
@@ -101,7 +98,7 @@ public class DetailActivity extends AppCompatActivity implements StepsAdapter.St
 
         if (findViewById(R.id.ingredients) != null && mIngredientsContent != null && mContent != null) {
 
-            mIngredientsFragment = new FragmentIngredients();
+            FragmentIngredients mIngredientsFragment = new FragmentIngredients();
             mIngredientsFragment.setItems(mRecipe.getIngredients());
             manager.beginTransaction()
                     .add(R.id.ingredients, mIngredientsFragment)
@@ -117,7 +114,7 @@ public class DetailActivity extends AppCompatActivity implements StepsAdapter.St
     @Override
     public void onClick(RecipeSteps step, int position) {
         int id = step.getId();
-        Intent intent = null;
+        Intent intent;
 
         if (id >= 0 && findViewById(R.id.content) != null) {
             mPlayerFragment.updateItemPosition(position);

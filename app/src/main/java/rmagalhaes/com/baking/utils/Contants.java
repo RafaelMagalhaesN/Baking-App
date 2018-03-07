@@ -5,7 +5,6 @@ package rmagalhaes.com.baking.utils;
  */
 
 public class Contants {
-    public static final String SAVED_INSTANCE_RECIPE_STATE          = "SAVED_INSTANCE_RECIPE_STATE";
     public static final String SAVED_INSTANCE_STEPS_STATE           = "SAVED_INSTANCE_STEPS_STATE";
     public static final String SAVED_INSTANCE_STEPS_LIST_STATE      = "SAVED_INSTANCE_STEPS_LIST_STATE";
     public static final String SAVED_INSTANCE_RECIPE_PLAYER_STATE   = "SAVED_INSTANCE_RECIPE_PLAYER_STATE";

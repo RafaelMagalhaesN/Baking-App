@@ -3,16 +3,12 @@ package rmagalhaes.com.baking.data.helpers;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.net.Uri;
-import android.provider.BaseColumns;
-
-import static rmagalhaes.com.baking.data.helpers.RecipeContract.AUTHORITY;
 
 /**
  * Created by Rafael Magalhães on 04/03/18.
  */
 
-public class DbHelper extends SQLiteOpenHelper {
+class DbHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "recipes.db";
     private static final int DATABASE_VERSION = 1;

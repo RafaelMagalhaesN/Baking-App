@@ -1,6 +1,5 @@
 package rmagalhaes.com.baking.ui;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.annotation.Nullable;
@@ -62,7 +61,7 @@ public class FragmentSteps extends Fragment {
         int spanCount = 1;
         GridLayoutManager gridLayoutManager = new GridLayoutManager(view.getContext(), spanCount);
 
-        mRecyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
+        mRecyclerView = view.findViewById(R.id.recyclerView);
 
         mRecyclerView.setLayoutManager(gridLayoutManager);
         mRecyclerView.setHasFixedSize(true);

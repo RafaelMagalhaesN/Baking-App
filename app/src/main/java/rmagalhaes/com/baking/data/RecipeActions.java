@@ -7,21 +7,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
-import android.util.SparseArray;
 import android.util.SparseIntArray;
 
 import com.google.gson.Gson;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 
 import rmagalhaes.com.baking.data.helpers.RecipeContract;
 import rmagalhaes.com.baking.models.Recipe;
 import rmagalhaes.com.baking.utils.LoaderInternalJSON;
 import rmagalhaes.com.baking.widget.RecipeWidgetProvider;
-import rmagalhaes.com.baking.widget.service.RecipeWidgetService;
 
 import static rmagalhaes.com.baking.data.helpers.RecipeContract.BASE_CONTENT_URI;
 import static rmagalhaes.com.baking.data.helpers.RecipeContract.PATH_RECIPES;
@@ -36,7 +32,7 @@ public class RecipeActions {
         String fileName = "baking.json";
         String stringify = LoaderInternalJSON.load(context, fileName);
         Recipe[] recipes =  new Gson().fromJson(stringify, Recipe[].class);
-        return new ArrayList<Recipe>(Arrays.asList(recipes));
+        return new ArrayList<>(Arrays.asList(recipes));
     }
 
 
@@ -69,6 +65,7 @@ public class RecipeActions {
             }
         }
 
+        if (cursor != null) cursor.close();
         return favorites;
     }
 
@@ -86,13 +83,13 @@ public class RecipeActions {
 
     }
 
-    public static int removeFavoriteRecipe(Recipe recipe, Context context) {
+    public static void removeFavoriteRecipe(Recipe recipe, Context context) {
         int id = recipe.getId();
         Uri SINGLE_RECIPE_URI = ContentUris.withAppendedId(
                 BASE_CONTENT_URI.buildUpon().appendPath(PATH_RECIPES).build(), id);
         updateWidget(context);
 
-        return context.getContentResolver().delete(SINGLE_RECIPE_URI, null, null);
+        context.getContentResolver().delete(SINGLE_RECIPE_URI, null, null);
 
     }
 
@@ -105,6 +102,7 @@ public class RecipeActions {
                 RecipeContract.RecipeEntry.COLUMN_RECIPE_ID+" = '"+recipe.getId() +"'" ,
                 null,
                 null);
+
         return cursor != null && cursor.getCount() > 0;
     }
 

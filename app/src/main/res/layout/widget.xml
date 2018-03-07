@@ -31,7 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:text="Favorite Recipes"
+            android:text="@string/favorite_recipes"
             android:textColor="#ffffff"
             android:padding="10dp"
             android:fontFamily="sans-serif-smallcaps"
@@ -47,7 +47,6 @@
 
 
         <TextView
-            android:id="@+id/empty_state"
             android:textAlignment="center"
             android:textColor="#ffffff"
             android:padding="10dp"
@@ -57,8 +56,5 @@
             tools:text="No favorites to show"/>
 
     </LinearLayout>
-
-
-
 
 </FrameLayout>

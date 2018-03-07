@@ -19,6 +19,7 @@ import static rmagalhaes.com.baking.utils.Contants.INTENT_RECIPE;
 public class MainActivity extends AppCompatActivity implements RecipeAdapter.RecipeClickListener {
 
     private ActivityMainBinding mMainBinding;
+    @SuppressWarnings("FieldCanBeLocal")
     private static ArrayList<Recipe> mRecipes = new ArrayList<>();
     private RecipeAdapter mAdapter;
 
@@ -41,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements RecipeAdapter.Rec
         mMainBinding.recyclerView.setAdapter(mAdapter);
     }
 
-    public void loadItems() {
+    private void loadItems() {
         if (mAdapter != null) {
             mRecipes = RecipeActions.getAllRecipeItems(this);
             mAdapter.setItems(mRecipes);
@@ -55,8 +56,4 @@ public class MainActivity extends AppCompatActivity implements RecipeAdapter.Rec
         startActivity(intent);
     }
 
-    @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-    }
 }

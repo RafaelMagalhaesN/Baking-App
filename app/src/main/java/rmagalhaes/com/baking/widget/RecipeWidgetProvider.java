@@ -1,6 +1,5 @@
 package rmagalhaes.com.baking.widget;
 
-import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.ComponentName;
@@ -8,11 +7,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.RemoteViews;
 
 import rmagalhaes.com.baking.R;
-import rmagalhaes.com.baking.ui.MainActivity;
 import rmagalhaes.com.baking.widget.service.RecipeWidgetService;
 
 /**

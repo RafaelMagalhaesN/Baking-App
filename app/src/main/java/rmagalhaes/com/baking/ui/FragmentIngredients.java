@@ -14,12 +14,9 @@ import java.util.ArrayList;
 
 import rmagalhaes.com.baking.R;
 import rmagalhaes.com.baking.adapters.IngredientsAdapter;
-import rmagalhaes.com.baking.adapters.StepsAdapter;
 import rmagalhaes.com.baking.models.RecipeIngredients;
-import rmagalhaes.com.baking.models.RecipeSteps;
 
 import static rmagalhaes.com.baking.utils.Contants.SAVED_INSTANCE_STEPS_LIST_STATE;
-import static rmagalhaes.com.baking.utils.Contants.SAVED_INSTANCE_STEPS_STATE;
 
 /**
  * Created by Rafael Magalhães on 03/03/18.
@@ -28,7 +25,6 @@ import static rmagalhaes.com.baking.utils.Contants.SAVED_INSTANCE_STEPS_STATE;
 public class FragmentIngredients extends Fragment {
 
 
-    private RecyclerView mRecyclerView;
     private IngredientsAdapter mAdapter;
     private static ArrayList<RecipeIngredients> mIngredients = new ArrayList<>();
 
@@ -49,7 +45,7 @@ public class FragmentIngredients extends Fragment {
         int spanCount = getResources().getInteger(R.integer.grid_columns);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(view.getContext(), spanCount);
 
-        mRecyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
+        RecyclerView mRecyclerView = view.findViewById(R.id.recyclerView);
 
         mRecyclerView.setLayoutManager(gridLayoutManager);
         mRecyclerView.setHasFixedSize(true);

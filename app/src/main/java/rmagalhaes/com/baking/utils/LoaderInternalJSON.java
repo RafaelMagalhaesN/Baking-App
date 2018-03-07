@@ -12,12 +12,13 @@ import java.io.InputStream;
 public class LoaderInternalJSON {
 
     public static String load(Context context, String assetFileName) {
-        String stringify = null;
+        String stringify;
 
         try {
             InputStream is = context.getAssets().open(assetFileName);
             int size = is.available();
             byte[] buffer = new byte[size];
+            //noinspection ResultOfMethodCallIgnored
             is.read(buffer);
             is.close();
             stringify = new String(buffer, "UTF-8");

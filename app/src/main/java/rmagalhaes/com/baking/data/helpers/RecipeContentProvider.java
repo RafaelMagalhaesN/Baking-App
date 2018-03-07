@@ -10,7 +10,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -21,15 +20,14 @@ import java.util.Arrays;
 
 public class RecipeContentProvider extends ContentProvider {
     private DbHelper mPlantDbHelper;
-    public static final int RECIPES = 100;
-    public static final int RECIPES_WITH_ID = 101;
+    private static final int RECIPES = 100;
+    private static final int RECIPES_WITH_ID = 101;
 
     // Declare a static variable for the Uri matcher that you construct
     private static final UriMatcher sUriMatcher = buildUriMatcher();
-    private static final String TAG = RecipeContentProvider.class.getName();
 
 
-    public static UriMatcher buildUriMatcher() {
+    private static UriMatcher buildUriMatcher() {
         // Initialize a UriMatcher
         UriMatcher uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
         // Add URI matches

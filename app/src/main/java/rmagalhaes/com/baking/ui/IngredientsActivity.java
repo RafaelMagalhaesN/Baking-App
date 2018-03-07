@@ -5,19 +5,14 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import java.util.ArrayList;
-
 import rmagalhaes.com.baking.R;
 import rmagalhaes.com.baking.models.Recipe;
-import rmagalhaes.com.baking.models.RecipeSteps;
 
 import static rmagalhaes.com.baking.utils.Contants.INTENT_RECIPE;
-import static rmagalhaes.com.baking.utils.Contants.INTENT_RECIPE_POSITION;
 
 public class IngredientsActivity extends AppCompatActivity {
 
     private Recipe mRecipe;
-    private int position = 0;
 
 
     @Override

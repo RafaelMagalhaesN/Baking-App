@@ -21,7 +21,7 @@ import rmagalhaes.com.baking.models.Recipe;
 
 public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder>{
     private ArrayList<Recipe> mRecipes = new ArrayList<>();
-    private RecipeClickListener mRecipeClickListener;
+    private final RecipeClickListener mRecipeClickListener;
 
     public interface RecipeClickListener {
         void onClick(Recipe recipe);
