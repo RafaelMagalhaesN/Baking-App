@@ -1,6 +1,5 @@
 package rmagalhaes.com.baking;
 
-import android.support.test.InstrumentationRegistry;
 import android.support.test.espresso.Espresso;
 import android.support.test.espresso.IdlingResource;
 import android.support.test.espresso.contrib.RecyclerViewActions;
@@ -8,8 +7,6 @@ import android.support.test.espresso.matcher.BoundedMatcher;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
-
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.junit.After;
