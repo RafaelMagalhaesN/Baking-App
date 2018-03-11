@@ -11,11 +11,14 @@ import android.util.SparseIntArray;
 
 import com.google.gson.Gson;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 import rmagalhaes.com.baking.data.helpers.RecipeContract;
+import rmagalhaes.com.baking.data.retrofit.Fetcher;
 import rmagalhaes.com.baking.models.Recipe;
+import rmagalhaes.com.baking.models.RecipeObservable;
 import rmagalhaes.com.baking.utils.LoaderInternalJSON;
 import rmagalhaes.com.baking.widget.RecipeWidgetProvider;
 
@@ -28,17 +31,21 @@ import static rmagalhaes.com.baking.data.helpers.RecipeContract.PATH_RECIPES;
 
 public class RecipeActions {
 
-    public static ArrayList<Recipe> getAllRecipeItems(Context context) {
+    public static ArrayList<Recipe> getAllLocalRecipeItems(Context context) {
         String fileName = "baking.json";
         String stringify = LoaderInternalJSON.load(context, fileName);
         Recipe[] recipes =  new Gson().fromJson(stringify, Recipe[].class);
         return new ArrayList<>(Arrays.asList(recipes));
     }
 
+    public static void getAllRecipeItems(Context context, RecipeObservable recipeObservable) {
+        Fetcher.fetchRecipes(recipeObservable);
+    }
+
 
     public static ArrayList<Recipe> getAllFavoritesRecipeItems(Context context) {
         Uri RECIPE_URI = BASE_CONTENT_URI.buildUpon().appendPath(PATH_RECIPES).build();
-        ArrayList<Recipe> allRecipeItems = getAllRecipeItems(context);
+        ArrayList<Recipe> allRecipeItems = getAllLocalRecipeItems(context);
         SparseIntArray temp = new SparseIntArray();
         ArrayList<Recipe> favorites = new ArrayList<>();
 

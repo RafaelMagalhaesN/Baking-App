@@ -3,4 +3,5 @@
     <string name="card">card</string>
     <string name="next_step">NEXT STEP</string>
     <string name="favorite_recipes">Favorite Recipes</string>
+    <string name="error">Check your Internet connection</string>
 </resources>

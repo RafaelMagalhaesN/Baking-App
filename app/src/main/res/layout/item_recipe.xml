@@ -63,7 +63,7 @@
                 android:layout_toEndOf="@+id/servings"
                 android:layout_alignParentBottom="true"
                 android:padding="10dp"
-                android:contentDescription="TODO" />
+                android:contentDescription="@string/card" />
 
 
             <ImageView
@@ -75,7 +75,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentTop="true"
                 android:padding="10dp"
-                android:contentDescription="TODO" />
+                android:contentDescription="@string/card" />
 
 
         </RelativeLayout>

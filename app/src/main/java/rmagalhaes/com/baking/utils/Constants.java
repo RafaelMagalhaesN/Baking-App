@@ -4,7 +4,7 @@ package rmagalhaes.com.baking.utils;
  * Created by Rafael Magalhães on 28/02/18.
  */
 
-public class Contants {
+public class Constants {
     public static final String SAVED_INSTANCE_STEPS_STATE           = "SAVED_INSTANCE_STEPS_STATE";
     public static final String SAVED_INSTANCE_STEPS_LIST_STATE      = "SAVED_INSTANCE_STEPS_LIST_STATE";
     public static final String SAVED_INSTANCE_RECIPE_PLAYER_STATE   = "SAVED_INSTANCE_RECIPE_PLAYER_STATE";
@@ -14,6 +14,6 @@ public class Contants {
     public static final String INTENT_RECIPE                        = "INTENT_RECIPE";
     public static final String INTENT_RECIPE_POSITION               = "INTENT_RECIPE_POSITION";
     public static final String INTENT_RECIPE_STEPS                  = "INTENT_RECIPE_STEPS";
-
+    public static final String BASE_URL                             = "https://d17h27t6h515a5.cloudfront.net";
     public static final String INTENT_RECIPE_ID = "INTENT_RECIPE_ID";
 }

@@ -8,7 +8,7 @@ import android.os.Bundle;
 import rmagalhaes.com.baking.R;
 import rmagalhaes.com.baking.models.Recipe;
 
-import static rmagalhaes.com.baking.utils.Contants.INTENT_RECIPE;
+import static rmagalhaes.com.baking.utils.Constants.INTENT_RECIPE;
 
 public class IngredientsActivity extends AppCompatActivity {
 

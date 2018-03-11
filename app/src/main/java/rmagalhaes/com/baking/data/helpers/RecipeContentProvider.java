@@ -166,7 +166,7 @@ public class RecipeContentProvider extends ContentProvider {
                 // Append any existing selection options to the ID filter
                 if (selectionArgs == null) selectionArgs = new String[]{id};
                 else {
-                    ArrayList<String> selectionArgsList = new ArrayList<String>();
+                    ArrayList<String> selectionArgsList = new ArrayList<>();
                     selectionArgsList.addAll(Arrays.asList(selectionArgs));
                     selectionArgsList.add(id);
                     selectionArgs = selectionArgsList.toArray(new String[selectionArgsList.size()]);

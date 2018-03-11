@@ -15,10 +15,10 @@ import rmagalhaes.com.baking.data.RecipeActions;
 import rmagalhaes.com.baking.models.Recipe;
 import rmagalhaes.com.baking.models.RecipeSteps;
 
-import static rmagalhaes.com.baking.utils.Contants.INTENT_RECIPE;
-import static rmagalhaes.com.baking.utils.Contants.INTENT_RECIPE_ID;
-import static rmagalhaes.com.baking.utils.Contants.INTENT_RECIPE_POSITION;
-import static rmagalhaes.com.baking.utils.Contants.INTENT_RECIPE_STEPS;
+import static rmagalhaes.com.baking.utils.Constants.INTENT_RECIPE;
+import static rmagalhaes.com.baking.utils.Constants.INTENT_RECIPE_ID;
+import static rmagalhaes.com.baking.utils.Constants.INTENT_RECIPE_POSITION;
+import static rmagalhaes.com.baking.utils.Constants.INTENT_RECIPE_STEPS;
 
 public class DetailActivity extends AppCompatActivity implements StepsAdapter.StepsClickListener {
 
@@ -55,7 +55,7 @@ public class DetailActivity extends AppCompatActivity implements StepsAdapter.St
 
             if (mRecipe == null && intent != null && intent.hasExtra(INTENT_RECIPE_ID)) {
                 int id = intent.getIntExtra(INTENT_RECIPE_ID, -1);
-                ArrayList<Recipe> recipes = RecipeActions.getAllRecipeItems(this);
+                ArrayList<Recipe> recipes = RecipeActions.getAllLocalRecipeItems(this);
                 for (Recipe recipe: recipes) {
                     if (id == recipe.getId()) {
                         mRecipe = recipe;

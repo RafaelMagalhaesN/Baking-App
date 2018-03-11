@@ -16,9 +16,9 @@ import rmagalhaes.com.baking.R;
 import rmagalhaes.com.baking.adapters.StepsAdapter;
 import rmagalhaes.com.baking.models.RecipeSteps;
 
-import static rmagalhaes.com.baking.utils.Contants.SAVED_INSTANCE_ITEM_SELECTED;
-import static rmagalhaes.com.baking.utils.Contants.SAVED_INSTANCE_STEPS_LIST_STATE;
-import static rmagalhaes.com.baking.utils.Contants.SAVED_INSTANCE_STEPS_STATE;
+import static rmagalhaes.com.baking.utils.Constants.SAVED_INSTANCE_ITEM_SELECTED;
+import static rmagalhaes.com.baking.utils.Constants.SAVED_INSTANCE_STEPS_LIST_STATE;
+import static rmagalhaes.com.baking.utils.Constants.SAVED_INSTANCE_STEPS_STATE;
 
 /**
  * Created by Rafael Magalhães on 28/02/18.

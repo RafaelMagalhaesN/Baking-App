@@ -31,8 +31,8 @@ import java.util.regex.Pattern;
 import rmagalhaes.com.baking.R;
 import rmagalhaes.com.baking.models.RecipeSteps;
 
-import static rmagalhaes.com.baking.utils.Contants.SAVED_INSTANCE_RECIPE_PLAYER_STATE;
-import static rmagalhaes.com.baking.utils.Contants.SAVED_INSTANCE_RECIPE_STEPS_POSITION_STATE;
+import static rmagalhaes.com.baking.utils.Constants.SAVED_INSTANCE_RECIPE_PLAYER_STATE;
+import static rmagalhaes.com.baking.utils.Constants.SAVED_INSTANCE_RECIPE_STEPS_POSITION_STATE;
 
 /**
  * Created by Rafael Magalhães on 03/03/18.

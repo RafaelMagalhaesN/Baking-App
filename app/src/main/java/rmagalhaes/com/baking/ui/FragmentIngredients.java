@@ -16,7 +16,7 @@ import rmagalhaes.com.baking.R;
 import rmagalhaes.com.baking.adapters.IngredientsAdapter;
 import rmagalhaes.com.baking.models.RecipeIngredients;
 
-import static rmagalhaes.com.baking.utils.Contants.SAVED_INSTANCE_STEPS_LIST_STATE;
+import static rmagalhaes.com.baking.utils.Constants.SAVED_INSTANCE_STEPS_LIST_STATE;
 
 /**
  * Created by Rafael Magalhães on 03/03/18.

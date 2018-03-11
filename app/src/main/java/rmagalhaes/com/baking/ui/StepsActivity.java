@@ -10,8 +10,8 @@ import java.util.ArrayList;
 import rmagalhaes.com.baking.R;
 import rmagalhaes.com.baking.models.RecipeSteps;
 
-import static rmagalhaes.com.baking.utils.Contants.INTENT_RECIPE_POSITION;
-import static rmagalhaes.com.baking.utils.Contants.INTENT_RECIPE_STEPS;
+import static rmagalhaes.com.baking.utils.Constants.INTENT_RECIPE_POSITION;
+import static rmagalhaes.com.baking.utils.Constants.INTENT_RECIPE_STEPS;
 
 public class StepsActivity extends AppCompatActivity {
 

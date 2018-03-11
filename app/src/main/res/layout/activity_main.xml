@@ -14,5 +14,13 @@
         tools:listItem="@layout/baking_item"
         android:id="@+id/recyclerView"/>
 
+    <TextView
+        android:id="@+id/errorInternet"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAlignment="center"
+        android:text="@string/error"/>
+
 </android.support.constraint.ConstraintLayout>
 </layout>
