@@ -4,6 +4,7 @@ import android.appwidget.AppWidgetManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Binder;
+import android.os.Bundle;
 import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
 
@@ -12,6 +13,7 @@ import java.util.ArrayList;
 import rmagalhaes.com.baking.R;
 import rmagalhaes.com.baking.data.RecipeActions;
 import rmagalhaes.com.baking.models.Recipe;
+import rmagalhaes.com.baking.utils.Constants;
 
 /**
  * Created by Rafael Magalhães on 05/03/18.
@@ -64,6 +66,13 @@ public class RecipeListProvider implements RemoteViewsService.RemoteViewsFactory
         Recipe recipe = mRecipes.get(position);
         remoteView.setTextViewText(R.id.recipe_name, recipe.getName());
         remoteView.setTextViewText(R.id.servings, String.valueOf(recipe.getServings()));
+
+        Bundle extras = new Bundle();
+        extras.putInt(Intent.EXTRA_TEXT, position);
+        extras.putParcelable(Constants.INTENT_RECIPE, mRecipes.get(position));
+        Intent fillInIntent = new Intent();
+        fillInIntent.putExtras(extras);
+        remoteView.setOnClickFillInIntent(R.id.item, fillInIntent);
         return remoteView;
     }
 
