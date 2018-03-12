@@ -8,13 +8,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.RemoteViews;
-import android.widget.Toast;
 
 import rmagalhaes.com.baking.R;
 import rmagalhaes.com.baking.ui.IngredientsActivity;
-import rmagalhaes.com.baking.ui.MainActivity;
 import rmagalhaes.com.baking.widget.service.RecipeWidgetService;
 
 /**

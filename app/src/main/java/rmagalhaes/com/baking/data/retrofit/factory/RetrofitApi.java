@@ -9,17 +9,11 @@ import rmagalhaes.com.baking.utils.Constants;
 
 public class RetrofitApi {
 
-
-
-    public RetrofitApi(){}
-
     public static retrofit2.Retrofit getRetrofit() {
-        retrofit2.Retrofit retrofit = new retrofit2.Retrofit.Builder()
+        return new retrofit2.Retrofit.Builder()
                 .baseUrl(Constants.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-
-        return retrofit;
     }
 
 }
